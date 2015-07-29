@@ -1,0 +1,17 @@
+<div class="row">
+	<ul class="media-list workouts">
+		<% @templates.each do |w| %>
+			<%= render "worktempinfo", w: w %>
+		<% end %>
+	</ul>
+	<form method="POST" action="/workouts" >
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		
+		<input type="hidden" name="workouts_template_id" value="<%= @worktemp.id %>">
+		<input type="submit" name="Submit" value="Start"> 
+	</form>
+	
+
+
+
+</div>

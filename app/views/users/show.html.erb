@@ -1,0 +1,11 @@
+<div>
+
+	<p> Welcome to your Trainr home page, <%= @user.name %>!</p>
+	<div class= "tracker-box">
+		<div class="workouts-month"></div>
+	<div class="links-box">
+		<%= link_to "View Your Workouts", user_index_path %>
+		<%= link_to "View All Workouts", workouts_templates_path %>
+	</div>
+
+</div>

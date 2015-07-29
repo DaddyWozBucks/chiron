@@ -1,0 +1,67 @@
+<%= render "exercisepageinput" %>
+
+<div class="col-xs-12 col-md-6 steppage">
+<%= form_for [@workout, @exercise] do |f| %>
+
+<h1> STEP PAGE </h1>
+
+
+  <% if @template.weight == false %>
+
+  	<div class="field">
+  		<%= f.label :distance %>
+  		<br/>
+  		<%= f.number_field :distance, :class => 'text_field', :step => 'any' %>
+  	</div>
+
+  	<div class="field">
+  		<%= f.label :time %>
+  		<br/>
+  		<%= f.number_field :time %>
+  	</div>
+
+  	<div class="field">
+  		<%= f.label :calories %>
+  		<br/>
+  		<%= f.number_field :calories %>
+  	</div>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="exercise[completed]" value= "true">
+    <input type="hidden" name="exercise[name]" value= "<%=@template.name%>">
+    <input type="hidden" name="exercise[exercise_id]" value= "<%= @exercise.id %>">
+
+  	<div class="actions">
+  		<%= f.submit %>
+  	</div>
+
+  <% else %>
+
+  	<div class="field">
+  		<%= f.label :weight %>
+  		<br/>
+  		<%= f.number_field :weight %>
+  	</div>
+
+  	<div class="field">
+  		<%= f.label :reps %>
+  		<br/>
+  		<%= f.number_field :reps %>
+  	</div>
+
+  	<div class="field">
+  		<%= f.label :sets %>
+  		<br/>
+  		<%= f.number_field :sets %>
+  	</div>
+
+  	<div class="actions">
+  		<%= f.submit %>
+  	</div>
+     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="exercise[completed]" value= "true">
+    <input type="hidden" name="exercise[name]" value= "<%=@template.name%>">
+    <input type="hidden" name="exercise[exercise_id]" value= "<%= @exercise.id %>">
+	<% end %>
+
+<% end %>
+</div>

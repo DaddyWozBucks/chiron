@@ -1,0 +1,8 @@
+<div class="row">
+	<ul class="media-list workouts">
+		<% @workouts.each do |w| %>
+			<%= render "workoutinfo", w: w %>
+		<% end %>
+	</ul>
+</div>
+<%= link_to "Plan your Workout!", new_workouts_template_sessionlist_path %>

@@ -1,0 +1,12 @@
+<div class="col-xs-12 col-md-6 workoutpage">
+	<ul>
+		<%= @worktemp.name %>
+		<% @exercises.each do |ex| %>
+			<% if ex.weight == nil %>
+				<li><%= ex.name %> Distance:<%=ex.distance%> Time: <%=ex.time%> Calories: <%=ex.calories%> </li>
+				<% else %>
+				<li><%= ex.name %> Weight:<%=ex.weight%> Reps: <%=ex.reps%> Sets: <%=ex.sets%> </li>
+			<% end %>
+		<% end %>
+	</ul>
+</div>

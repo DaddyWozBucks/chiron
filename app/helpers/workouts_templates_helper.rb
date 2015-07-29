@@ -1,0 +1,2 @@
+module WorkoutsTemplatesHelper
+end
