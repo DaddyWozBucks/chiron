@@ -1,4 +1,5 @@
 class ExercisesController < ApplicationController
+	before_action :authenticate_user!
 	def new
 		@workout = Workout.find(params[:workout_id])
 		@worktemp = WorkoutsTemplate.find(@workout.workouts_template_id)
@@ -19,7 +20,7 @@ class ExercisesController < ApplicationController
 	end
 
 	def index
-		@workout = Workout.find(params[:workout_id])
+		@workout = Workout.find(params[:user_id])
 		@exercises = @workout.exercises.all
 	end
 

@@ -12,7 +12,7 @@ class WorkoutsController < ApplicationController
 	def create	
 		@worktemp = WorkoutsTemplate.find(params[:workouts_template_id])
 		@user = current_user
-		@workout = @worktemp.workouts.create!
+		@workout = @worktemp.workouts.create!(user_id: current_user.id, title: @worktemp.name)
 		redirect_to new_workout_exercise_path(@workout)
 	end
 
@@ -20,7 +20,15 @@ class WorkoutsController < ApplicationController
 		@workout = Workout.find(params[:id])
 		@worktemp = WorkoutsTemplate.find(@workout.workouts_template_id)
 		@exercises = @workout.exercises
-		pry
+		
+	end
+
+
+	
+	def destroy
+		@workout = Workout.find(params[:id])
+		@workout.destroy
+		redirect_to workouts_path
 	end
 
 

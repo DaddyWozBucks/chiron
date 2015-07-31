@@ -1,9 +1,13 @@
-<div class="row">
-	<ul class="media-list workouts">
-		
-			<% @worktemp.each do |w| %>
-				<%= render "worktempoverview", w: w %>
-			<% end %>
-		
+<div class="container-fluid exholder">
+	<div class="row">
+		<ul class="media-list workouts">
+			
+				<% @worktemp.each do |w| %>
+					<%= render "worktempoverview", w: w %>
+				<% end %>
+			
+		</ul>
+	</div>
+</div>
 			<%= link_to "No Workouts? Create a New One!",   new_workouts_template_path %> or <%= link_to "Use one of ours!", workouts_templates_path %>
 		

@@ -1,9 +1,7 @@
-<div class="welcome-box">Welcome to Trainr(Working Title)</div>
-<button type="button" class="btn btn-lrg"> <%= link_to "Register!", new_user_registration_path %>
-</button>
-<button type="button" class="btn btn-lrg"> <%= link_to "Log In!", new_user_session_path %>
-</button>
-<button type="button" class="btn btn-lrg"> <%= link_to "Workouts!", user_index_path %>
-</button>
-
-
+<div class="pseudo-bg">
+	<div class="jumbotron">
+	  <h1>Welcome to your Chiros!</h1>
+	  <p>Chiros is a new way of approaching fitness apps. We aim to use your phone to complete your gym experience by offering you an easy way to track, plan and compare your workouts. Using NFC technology and our companion app you can now track your progress on any piece of equipment in the gym!</p>
+	  <p><a><%= link_to "Log In!", new_user_session_path, class: "btn btn-primary btn-lrg" %></a></p>
+	</div>
+</div>

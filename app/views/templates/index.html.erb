@@ -1,0 +1,7 @@
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+<% @template.each do |t| %>
+	<%= render partial: "templateinfo", locals: { t: t, worktemps: @worktemps } %>
+<% end %>
+ </div>
+
+ 

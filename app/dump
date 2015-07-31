@@ -1,0 +1,60 @@
+<div class="media col-sm-12 col-md-6 workout__item" >
+	<div class="workout__item__list col-xs-8 col-md-8">
+		<h1><%= link_to t.name, template_path(t.id) %></h1>
+	</div>
+	<div class="workout__item__list col-xs-8 col-md-8">
+		<%= t.instructions %>
+	</div>
+	<div class="workout__item__list col-xs-8 col-md-8">
+		<%= t.musclecat %>
+	</div>
+
+	<div class="btn-group">
+	  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    Action <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu">
+	  <% @worktemp.each do |w| %>
+	    <li id ="exercise_ids[]" value="<%=w.id%>"><%=w.name%></li>
+	    <% end %>
+	    <li role="separator" class="divider"></li>
+	    <li>%= link_to "Custom Workout", new_workouts_template_path %></li>
+	  </ul>
+	</div>
+
+
+
+<li class="media col-sm-12 col-md-6 workout__item" data-id ="<%=w.id%>">
+  <a class="pull-left col-xs-2 col-md-3" href="#">
+    <img class="media-object" src="..." alt="...">
+  </a>
+  <div class="media-body">
+  <div class="container col-xs-6 col-md-3 ">
+    <div class="media-heading"> <%= w.name %> </div> 
+  </div>
+  <div class="container col-xs-4 col-md-3 pull-right">
+      
+  </div>
+  </div>
+</li>
+
+
+<div class="dropdown">
+		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		    Add To Workout
+		    <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+		    <% @worktemp.each do |w| %>
+		    <li><a class="add-work-list-item" data-id="<%=w.id%>"> <%=w.name %></a></li>
+		    <% end %>
+		  </ul>
+		</div>
+
+		  <%= form_for
+    <%= f.select(:workouts_template_id) do %>
+
+      <% @worktemparray.each do |c| -%>
+        <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>

@@ -1,0 +1,59 @@
+
+.workout__item {
+	border-radius: 5px;
+	border: 1px solid #520000;
+	background-color: #f5f5f5;
+	font-color: #141313;
+}
+.exholder {
+	min-height: 80%;
+}
+
+.list__btn {
+	margin-bottom: 40%;
+	margin-top: 40%;
+	background-color: #F59D2A;
+	font-color: #EDDDDD;
+	height: 60%;
+	border: 2px solid #8A0000;
+}
+
+.media-heading{
+	font-size: 2em;
+	font-family: "arial";
+	font-weight: 900;
+}
+
+
+.holdall {
+	background-color: #f5f5f5;
+	border: 1px solid grey;
+	border-radius: 10px;
+}
+.circle {
+	width:100px;
+	height:100px;
+	border-radius:50px;
+	font-size:20px;
+	color:#fff;
+	line-height:100px;
+	text-align:center;
+	background:#000;
+	float: left;};
+
+/*<div class="container col-xs-4 col-md-3 pull-right">
+      <form method="POST" action="/workouts" >
+    		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    		<input type="hidden" name="workouts_template_id" value="<%= w.id %>">
+        <div class="btn-group">
+            <button class ="btn btn-lrg"> <%= link_to "Edit", edit_workouts_template_path(w.id) %> </button>
+            <button class ="btn btn-lrg"> <%= link_to 'Destroy',  { action: :destroy, id: w.id }, method: :delete, data: { confirm: 'Are you sure?' } %> </button>
+            <button class ="btn btn-lrg"type="submit" name="Submit" value="Start" class="btn btn-default">Start </button>
+        </div>
+         
+  	</form>
+  	<a class="pull-left col-xs-2 col-md-3" href="#">
+    <img class="" src="..." alt="...">
+  </a>
+  <div class="">
+  </div>*/

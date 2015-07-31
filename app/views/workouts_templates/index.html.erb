@@ -1,9 +1,32 @@
-<div class="row">
-	<ul class="media-list workouts">
-		<% @worktemp.each do |w| %>
-			<%= render "worktempoverview", w: w %>
-		<% end %>
+<div class="container col-xs-12 col-md-12 col-lg-12 holdall">
+	
+		 @worktemp.each do |w| 
+			render "worktempoverview", w: w %>
+		 end
 	
 
 
 </div>
+
+<div>
+
+<% @worktemp.each do |w| %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title" data-hook="<%=w.id%>"><%=w.name%></h3>
+  </div>
+  <div class="panel-body hidden" data-id="<%=w.id%>">
+    <form method="POST" action="/workouts" >
+    		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    		<input type="hidden" name="workouts_template_id" value="<%= w.id %>">
+        <div class="btn-group">
+            <button class ="btn btn-lrg"> <%= link_to "Edit", edit_workouts_template_path(w.id) %> </button>
+            <button class ="btn btn-lrg"> <%= link_to 'Destroy',  { action: :destroy, id: w.id }, method: :delete, data: { confirm: 'Are you sure?' } %> </button>
+            <button class ="btn btn-lrg"type="submit" name="Submit" value="Start" class="btn btn-default">Start </button>
+        </div>
+         
+  	</form>
+  </div>
+</div>
+<% end%>
+

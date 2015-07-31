@@ -1,0 +1,34 @@
+<h1>Create your own exercise!</h1>
+
+<p>We know gym rats will use anything to exercise so feel free to add your own exercise!</p>
+
+<%= form_for @template, do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :instructions %><br />
+    <%= f.text_field :instructions, autofocus: true %>
+  </div>
+
+   <div class="field">
+    <%= f.label :instructions %><br />
+    <%= f.text_field :instructions, autofocus: true %>
+  </div>
+  <a href="javascript.void(0)" id="cardio">Cardio</a>
+  <a href="javascript.void(0)" id="cardio">Lifting</a>
+  <p>For Distance/Time/Calories measurements select 'Cardio' and for Weight/Reps/Sets select 'Lifting'</p>
+  
+  <div class="field" id="weightdist">
+  	
+  </div>
+
+  <div class="field" id ="timereps">
+  	
+  </div>
+
+  <div class="field" id="calsets">
+  	
+  </div>

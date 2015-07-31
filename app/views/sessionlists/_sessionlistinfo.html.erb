@@ -1,1 +1,7 @@
-<div class="panel panel-default"> <%= x.name %> <%= x.instructions %> <%= check_box_tag( "exercise_ids[]", value = x.id, checked = false, options = {}) %></div>
+
+ <select name="exercise_ids">
+ <% @exlist.each do |ex| %>
+ 	<option value="<%=ex.id%>"><%=ex.name%></option>
+ 	<% end %>
+ </select>
+

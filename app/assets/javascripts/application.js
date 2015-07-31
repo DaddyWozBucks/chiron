@@ -14,5 +14,8 @@
 //= require jquery_ujs
 
 //= require bootstrap-sprockets
-//= require_tree.
+//= require_tree .
+
+  <%= javascript_include_tag "//www.google.com/jsapi" %>
+  <%= javascript_include_tag "application", "chartkick" %>
 

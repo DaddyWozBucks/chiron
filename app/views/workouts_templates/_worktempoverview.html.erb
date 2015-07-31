@@ -1,18 +1,26 @@
 
-<li class="media col-sm-12 col-md-6 workout__item" data-id ="<%=w.id%>">
-  <a class="pull-left" href="#">
-    <img class="media-object" src="..." alt="...">
+<li class="col-sm-12 col-md-6 col-lg-12 workout__item" data-id ="<%=w.id%>">
+  <a class="pull-left col-xs-2 col-md-3" href="#">
+    <img class="" src="..." alt="...">
   </a>
-  <div class="media-body">
-    <h4 class="media-heading"> <%= w.name %> </h4> 
-     
-      	<div> <%= w.name %> </div>
-      	<form method="POST" action="/workouts" >
-		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-		
-		<input type="hidden" name="workouts_template_id" value="<%= w.id %>">
-		<input type="submit" name="Submit" value="Start" class="btn btn-default"> 
-	</form>
-
+  <div class="">
+  <div class="container col-xs-6 col-md-3 col-lg-12 ">
+    <div class="media-heading"> <%= link_to w.name, workouts_template_path(w.id) %> </div> 
+  </div>
+  <div class="container col-xs-4 col-md-3 pull-right">
+      <form method="POST" action="/workouts" >
+    		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    		<input type="hidden" name="workouts_template_id" value="<%= w.id %>">
+        <div class="btn-group">
+            <button class ="btn btn-lrg"> <%= link_to "Edit", edit_workouts_template_path(w.id) %> </button>
+            <button class ="btn btn-lrg"> <%= link_to 'Destroy',  { action: :destroy, id: w.id }, method: :delete, data: { confirm: 'Are you sure?' } %> </button>
+            <button class ="btn btn-lrg"type="submit" name="Submit" value="Start" class="btn btn-default">Start </button>
+        </div>
+         
+  	</form>
+  </div>
   </div>
 </li>
+
+
+

@@ -1,4 +1,5 @@
 class WorkoutsTemplatesController < ApplicationController
+	before_action :authenticate_user!
 	def show
 		@exerID = []
 		@worktemp = WorkoutsTemplate.find(params[:id])
@@ -25,6 +26,20 @@ class WorkoutsTemplatesController < ApplicationController
 		@user = current_user
 		@worktemp = @user.workouts_templates.create!(workouts_template_params)
 		redirect_to new_workouts_template_sessionlist_path(@worktemp)
+	end
+
+	def edit
+		@worktemp = WorkoutsTemplate.find(params[:id])
+		@worktemp.sessionlists.destroy_all
+		redirect_to new_workouts_template_sessionlist_path(@worktemp)
+	end
+
+	
+
+	def destroy
+		@worktemp = WorkoutsTemplate.find(params[:id])
+		@worktemp.destroy
+		redirect_to user_index_path
 	end
 
 	def userindex

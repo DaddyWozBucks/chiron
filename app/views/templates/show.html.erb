@@ -1,0 +1,19 @@
+<div class="col-xs-12 col-md-6 workoutpage">
+	<ul>
+		<div class="jumbotron">
+			<h1><%= @template.name %></h1>
+		</div>
+		<% if @exercises.length == 0 %>
+			<div class="alert alert-warning" role="alert">The <%= @template.name %> is getting dusty - hit the gym you lazy bastard!</div>
+		<% else %>
+		<% @exercises.each do |ex| %>
+			<% if ex.weight == nil %>
+				<li><%= ex.name %> Distance:<%=ex.distance%> Time: <%=ex.time%> Calories: <%=ex.calories%> Date: <%= ex.updated_at %> </li>
+				<% else %>
+				<li><%= ex.name %> Weight:<%=ex.weight%> Reps: <%=ex.reps%> Sets: <%=ex.sets%> </li>
+				<% end %>
+			<% end %>
+		<% end %>
+	</ul>
+	<button class="btn btn-lrg"><%= link_to "Back", templates_path %></button>
+</div>

@@ -4,11 +4,18 @@ Please select the exercises you wish to
 
 <form method="POST" action="<%= workouts_template_sessionlists_path(@worktemp) %>" id="sessionlist">
 	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<div class="dropdown-holder col-xs-6 col-md-4">
+		<div class="panel panel-default dropdown" id="drop1">
+			 <select name="exercise_ids[]">
+	 				<% @exlist.each do |ex| %>
+	 				<option value="<%=ex.id%>"><%=ex.name%></option>
+	 				<% end %>
+	 		</select>
+		</div>
+	</div>	
+ 	
+ 	<a href="javascript:void(0)" class="btn btn-default" id="addextemp">Add another exercise!</a>
 
-	<% @exlist.each do |x| %>
-		<%= render "sessionlistinfo", x: x %>
-	<% end %>
-
-	<button type="submit" class="btn btn-lrg"> Save Workout!</button>
+	<button type="submit" class="btn btn-lrg" id="submitter"> Save Workout!</button>
 </form>
 
