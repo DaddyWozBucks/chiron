@@ -1,7 +1,7 @@
-<div class="background-container container-fluid">
+<div class="background-container container">
 	
 
-	<div>
+	<div class="tab-holder container">
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
@@ -14,12 +14,12 @@
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="home">
-    			Name: <%= current_user.name %>
-				<br/>
-				Handle: <%= current_user.handle%>
-				<br/>
-				Location: <%= current_user.location%>
-				<div class="workouts-month ">
+    	<div class="panel col-lg-3">Name: <%= current_user.name %>
+        <br/>
+        Handle: <%= current_user.handle%>
+        <br/>
+        Location: <%= current_user.location%></div>		
+				<div class="workouts-month col-lg-9">
 			<% @workouts.each do |x| %>
 				<div class="workouts-month__item"><%= x.title %> <span class="pull-right"><%= time_ago_in_words(x.updated_at) %></span></div>
 			<% end %>
@@ -27,7 +27,7 @@
 
     </div>
     <div role="tabpanel" class="tab-pane" id="profile">
-    		<%= pie_chart current_user.workouts.group(:title).count %>
+    		<div><%= pie_chart current_user.workouts.group(:title).count %></div>
     		
     </div>
     <div role="tabpanel" class="tab-pane" id="messages">

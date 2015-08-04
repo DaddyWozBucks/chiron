@@ -1,6 +1,5 @@
 .background-container {
-	backgorund-color: #f5f5f5;	
-	border-radius: 10px;
+
 }
 
 .workouts-month {
@@ -11,6 +10,8 @@
 .workouts-month__item {
 	border-bottom: 1px solid grey;
 	padding-top: .5em;
+	border-right: 1px solid grey;
+	border-left: 1px solid grey;
 }
 
 .user-info {
@@ -20,4 +21,16 @@
 
 .tracker-box{
 	background-color: #f5f5f5;
+}
+
+.tab-holder{
+	padding-bottom: 2em;
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-top: 1em;
+	background-color: #F2F2F2;
+	border-radius: 10px;
+}
+body{
+	background-color: #414242;
 }
