@@ -5,7 +5,7 @@ class WorkoutsController < ApplicationController
 	end
 
 	def new
-		@workout = @worktemp.workouts.create!(workouts_template_id: params[:workouts_template_id])
+		@workout = @worktemp.workouts.create!(workouts_template_id: params[:workouts_template_id], imgurl: @worktemp.imgurl)
 		redirect_to new_workout_exercise_path(@workout)
 	end
 
