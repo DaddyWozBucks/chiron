@@ -1,7 +1,47 @@
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+<div class="container-fluid col-lg-10 col-md-offset-1 indexpage">
 <% @template.each do |t| %>
-	<%= render partial: "templateinfo", locals: { t: t, worktemps: @worktemps } %>
+	<%= render partial: "templateinfo", locals: { t: t } %>
 <% end %>
- </div>
+<%= content_tag :div, class: ["templatedump", "hidden"], data: {results: @template} do %>
+<% end %>
+
+
+ <div class="modal fade" id="tempModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+	  <div class="modal-body">
+	     <div class="col-md-4">
+	      	<div id="temp_instructions">
+	     
+	        </div>
+	        <div id="temp_musclecat">
+	        	
+	      </div>
+        </div>
+        <div class="col-md-4">
+       		<img id ="pic1" src="">
+        	<img id="pic2" src="">
+        </div>
+        <div id="addtoworkout" class="col-md-4">
+
+        	  <select class="btn btn-lrg selector" ex_id="">
+  					<%= @worktemps.each do |w| %>
+  				<option value="<%=w.id%>"><%=w.name%></option>
+  				<% end %>
+ 				 </select>
+  				<button class= "btn btn-lrg btn-success" type="submit"> Add To Workout</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+
+</div>
 
  

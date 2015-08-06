@@ -2,6 +2,7 @@ class TemplatesController < ApplicationController
 	before_action :authenticate_user!
 	def new
 		@exlist = Template.exlist
+		@template = Template.new
 	end
 
 	def index
@@ -22,12 +23,8 @@ class TemplatesController < ApplicationController
 
 	end
 	def create
-		@worktemp = WorkoutsTemplate.find_by(params[:workouts_template_id])
-		@selectedexercises = []
-		@selectedexercises.each do |ex|
-			@worktemp.exercise_templates.create! 
-			
-		end
+		@template = Template.create!(template_params)
+		redirect_to templates_path
 	end
 
 	def exergrabber
@@ -40,8 +37,14 @@ class TemplatesController < ApplicationController
 	# def array_gen
 	# 	@worktemparray = []
 	# 	@worktemps.each do |wt|
- #  			@worktemparray += [wt.name, wt.id]
+ #  			@worktemparray += [wt.name, wt.id
  #  			end 
  #  			@worktemparray
  #  	end
+
+private
+
+	def template_params
+		params.require(:template).permit(:name, :templateshot, :instructions, :weight, :reps, :sets, :distance, :time, :calories)
+	end
 end

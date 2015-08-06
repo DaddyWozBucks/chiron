@@ -2,7 +2,7 @@ class Template < ActiveRecord::Base
 	has_many :exercises
 	belongs_to :workouts_template
 	has_many :sessionlists
-
+	
 	def self.exlist
 		exlist = []
 

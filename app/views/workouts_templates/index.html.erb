@@ -1,21 +1,56 @@
-<div class="container col-xs-12 col-md-12 col-lg-12 holdall">
-    <% @worktemp.each do |w| %>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title" data-hook="<%=w.id%>"><%=w.name%></h3>
+
+<div class="container-fluid col-lg-10 col-lg-offset-1  centerstrip">
+	<div class="row">
+		<div class="col-lg-1"><span class="glyphicon glyphicon-th-list"></span></div>
+		<div class="introbox col-lg-10" >
+			<h2>Welcome to the Workout Plan index. Here you can find all the workout plans used by fellow Chiron users and trainers at the gym. </h2>
+		</div>
+	</div>
+		<% @worktemp.each do |w| %>
+			<%= render partial: "worktempoverview", locals: { w: w } %>
+		<% end %>
+		<%= content_tag :div, class: ["worktempdump", "hidden"], data: {results: @worktemp} do %>
+		<% end %>
+		<%= content_tag :div, class: ["extempdump", "hidden"], data: {results: @templates} do %>
+		<% end %>
+		
+		 <div class="modal_trigger col-md-3" style="background-image: url()" >
+			 <div id="ribbon-container">
+			  <%=link_to "Create a custom Workout Plan" , new_workouts_template_path, :id => "ribbon" %> 
+			  </div>
+		</div>
+	
+</div>
+
+ <div class="modal fade" id="worktempModal" tabindex="-1" role="dialog" aria-labelledby="myWorkTempModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myWorkTempModalLabel"></h4>
       </div>
-      <div class="panel-body hidden" data-id="<%=w.id%>">
-        <form method="POST" action="/workouts" >
-        		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        		<input type="hidden" name="workouts_template_id" value="<%= w.id %>">
-            <div class="btn-group">
-                <button class ="btn btn-lrg"> <%= link_to "Edit", edit_workouts_template_path(w.id) %> </button>
-                <button class ="btn btn-lrg"> <%= link_to 'Destroy',  { action: :destroy, id: w.id }, method: :delete, data: { confirm: 'Are you sure?' } %> </button>
-                <button class ="btn btn-lrg"type="submit" name="Submit" value="Start" class="btn btn-default">Start </button>
-            </div>
-             
-      	</form>
+	  <div class="modal-body">
+	     <div class="col-md-4">
+	      	<div >
+	     		<ul class="panel panel-list">
+	     			<li id="worktemp_exercises" class="hidden"></li>
+	     		</ul>
+	        </div>
+	        <div id="temp_musclecat">
+	        	
+	      </div>
+        </div>
+        <div class="col-md-4">
+        	<img id="pic2wt" src="">
+        </div>
+        <button class="btn btn-lrg btn-danger" id="startyourengines"></button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
-<% end%>
+  </div>
+
 </div>
+
+ 

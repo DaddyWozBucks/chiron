@@ -1,15 +1,31 @@
-<p>New Workout(TEMPLATE)!</p>
+<div class="hidden timebait"></div>
+<!-- Modal -->
+<div class="modal-dialog">
+  <div class="new_workout col-md-6 ">
+    <div class="modal-header">
+        
+      <h4 class="modal-title" >Modal title</h4>
+    </div>
+    <div class="new_workout">
+      <p>Y'all just popped in to <%= current_user.name%>'s Brand New Workout Plan!</p>
 
-<%= form_for @worktemp do |f| %>
 
-<div class="field">
-	<%= f.label :name %>
-	<br/>
-	<%= f.text_field :name %>
+			<%= form_for @worktemp do |f| %>	
+
+			 <div class="field">
+					<%= f.label :name %>
+					<br/>
+					<%= f.text_field :name %>
+			 </div>
+
+			 <div class="actions">
+				<%= f.submit "Create Workout!" , class: "btn btn-primary btn-lrg" %>
+
+			 </div>
+			<% end %>     
+
+
+      </div>
+    </div>
+  </div>
 </div>
-
-<div class="actions">
-<%= f.submit %>
-
-</div>
-<% end %>

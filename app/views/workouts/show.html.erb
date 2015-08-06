@@ -1,6 +1,6 @@
-<div class="col-xs-12 col-md-6 workoutpage">
+<div class="col-xs-12 col-md-8 col-md-off-set-2 workout_page">
 	<ul>
-		<%= @worktemp.name %>
+		<div class="panel panel-header"><%= @worktemp.name %></div>
 		<% @exercises.each do |ex| %>
 			<% if ex.weight == nil %>
 				<li><%= ex.name %> Distance:<%=ex.distance%> Time: <%=ex.time%> Calories: <%=ex.calories%> </li>

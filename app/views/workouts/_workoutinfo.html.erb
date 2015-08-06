@@ -1,12 +1,16 @@
 
-<li class="media col-sm-12 col-md-6 workout__item" data-id ="<%=w.id%>">
+<li class="media col-sm-12 col-md-8 " data-id ="<%=w.id%>">
   <a class="pull-left" href="#">
-    <img class="media-object" src="..." alt="...">
+    <img class="media-object" src="<%= w.imgurl %>" alt="...">
   </a>
-  <div class="media-body">
+  <div class="media-body workout__item">
     <h4 class="media-heading"> <%= link_to w.title, workout_path(w.id)%> </h4> 
-      <%= w.exercises.each do |ex|%>
-      	<li>Weight:<%=ex.weight%> Reps: <%=ex.reps%> Sets: <%=ex.sets%></li>
+      <ul>
+	      <% w.exercises.each do |ex|%>
+	      	<li>Weight:<%=ex.weight%> Reps: <%=ex.reps%> Sets: <%=ex.sets%></li>
       <% end %>
+      </ul>
+      <%=button_to "Delete Record", workouts_path(w.id), method: "DELETE", class: "btn btn-lrg" %>
   </div>
+
 </li>

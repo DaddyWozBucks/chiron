@@ -1,59 +1,133 @@
-
-.workout__item {
-	border-radius: 5px;
-	border: 1px solid #520000;
-	background-color: #f5f5f5;
-	font-color: #141313;
+* {
+  padding: 0;
+  /* Standard Reset, and we're adding box-sizing:border-box because it's awesome. */
+  
+  margin: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-transition: all 0s ease-in-out;
+  -moz-transition: all 0s ease-in-out;
+  -o-transition: all 0s ease-in-out;
+  transition: all 0s ease-in-out;
 }
-.exholder {
-	min-height: 80%;
-}
-
-.list__btn {
-	margin-bottom: 40%;
-	margin-top: 40%;
-	background-color: #F59D2A;
-	font-color: #EDDDDD;
-	height: 60%;
-	border: 2px solid #8A0000;
-}
-
-.media-heading{
-	font-size: 2em;
-	font-family: "arial";
-	font-weight: 900;
-}
-
-
 .holdall {
+
+	background-color: #E3E3E3;
+	border-radius: 5px;
+	height: 100%;
+}
+.modal_trigger_worktemp {
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 1px white;
+	padding: .75em;
+	height: 400px;
+	width: 100%px;
+	max-width: 80%;
+	position:relative;
+	border: 5px solid white;
+	box-shadow: 0 0 10px rgba(0,0,0,.3);
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+	
+}
+#ribbon-container{
+	position: absolute;
+	top:	15px;
+	right: -20px;
+	overflow: visible;
+	font-size: 18px;
+	line-height: 18px;
+}	
+#ribbon-container:before {
+	content: "";
+	height: 0;
+	width:0;
+	display: block;
+	position: absolute;
+	top: 3px;
+	left: 0;
+	border-top: 29px solid rgba(0,0,0,.3);
+	border-bottom: 29px solid rgba(0,0,0,.3);
+	border-right: 29px solid rgba(0,0,0,.3);
+	border-left: 29px solid transparent;
+}
+#ribbon-container:after {
+	content: "";
+	height: 3;
+	width:0;
+	background: rgba(0,0,0,.3);
+	display: block;
+	position: absolute;
+	bottom: -3px;
+	left: 58px;
+	right: 3px;
+}
+#ribbon-container a {
+	display: block;
+	padding: 20px;
+	position: relative;
+	background: #8a979f;
+	overflow: visible;
+	height: 58px;
+	margin-left: 29px;
+	color: #fff;
+	text-decoration: none;
+}
+#ribbon-container a:after {
+	content: "";
+	height: 0;
+	width:0;
+	display: block;
+	position: absolute;
+	bottom: -15px;
+	right: 0px;
+	border-top: 15px solid #4c4e4f;
+	border-right: 15px solid transparent;
+}
+#ribbon-container a:before {
+	content: "";
+	height: 0;
+	width:0;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -29px;
+	border-top: 29px solid #8a979f;
+	border-bottom: 29px solid #8a979f;
+	border-right: 29px solid transparent;
+	border-left: 29px solid transparent;
+}
+#ribbon-container a:hover {
+	background: #829098;
+}
+
+#ribbon-container a:hover:before {
+	border-top: 29px solid #829098;
+	border-bottom: 29px solid #829098;
+}
+.centerstrip {
 	background-color: #f5f5f5;
-	border: 1px solid grey;
 	border-radius: 10px;
 }
-.circle {
-	width:100px;
-	height:100px;
-	border-radius:50px;
-	font-size:20px;
-	color:#fff;
-	line-height:100px;
-	text-align:center;
-	background:#000;
-	float: left;};
-
-/*<div class="container col-xs-4 col-md-3 pull-right">
-      <form method="POST" action="/workouts" >
-    		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    		<input type="hidden" name="workouts_template_id" value="<%= w.id %>">
-        <div class="btn-group">
-            <button class ="btn btn-lrg"> <%= link_to "Edit", edit_workouts_template_path(w.id) %> </button>
-            <button class ="btn btn-lrg"> <%= link_to 'Destroy',  { action: :destroy, id: w.id }, method: :delete, data: { confirm: 'Are you sure?' } %> </button>
-            <button class ="btn btn-lrg"type="submit" name="Submit" value="Start" class="btn btn-default">Start </button>
-        </div>
-         
-  	</form>
-  	<a class="pull-left col-xs-2 col-md-3" href="#">
-    <img class="" src="..." alt="...">
-  </a>
-  <div class="">
-  </div>*/
+.introbox {
+	background-color: #f5f5f5;
+	padding: 1em;
+	border-radius: 10px;
+}
+.placeholder{
+	height: 80px;
+}
+.worktempcover {
+	height: 80%;
+	width: 100%;
+	background-repeat:no-repeat;
+}
+.new_workout {
+	background-color: #f5f5f5;
+	border-radius: 10px;
+	box-shadow: 2px rgba(0,159,241,.4);
+	width: 100%; 
+	padding: 1em;
+}

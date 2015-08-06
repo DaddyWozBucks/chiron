@@ -1,5 +1,6 @@
 class WorkoutsTemplatesController < ApplicationController
 	before_action :authenticate_user!
+	
 	def show
 		@exerID = []
 		@worktemp = WorkoutsTemplate.find(params[:id])

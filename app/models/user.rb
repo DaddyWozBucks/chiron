@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :workouts_templates
   belongs_to :role
   before_create :set_default_role
-
+  
 
   private
   def set_default_role

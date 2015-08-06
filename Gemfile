@@ -15,7 +15,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
-
+gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'activerecord-reputation-system'
 gem 'chartkick'
 gem 'groupdate'

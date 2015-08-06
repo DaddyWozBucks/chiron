@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150730185126) do
+ActiveRecord::Schema.define(version: 20150805125233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,14 +94,16 @@ ActiveRecord::Schema.define(version: 20150730185126) do
     t.string   "instructions"
     t.string   "name"
     t.string   "musclecat"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.boolean  "distance"
     t.boolean  "time"
     t.boolean  "calories"
     t.boolean  "weight"
     t.boolean  "reps"
     t.boolean  "sets"
+    t.string   "imgurl"
+    t.string   "img_target_url"
   end
 
   create_table "users", force: :cascade do |t|
@@ -122,6 +124,8 @@ ActiveRecord::Schema.define(version: 20150730185126) do
     t.string   "location"
     t.integer  "age"
     t.integer  "role_id"
+    t.string   "imgurl"
+    t.string   "img_target_url"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -139,8 +143,10 @@ ActiveRecord::Schema.define(version: 20150730185126) do
   create_table "workouts_templates", force: :cascade do |t|
     t.string   "name"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "imgurl"
+    t.string   "img_target_url"
   end
 
   add_foreign_key "users", "roles"

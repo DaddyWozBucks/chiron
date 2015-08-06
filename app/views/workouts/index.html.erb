@@ -1,8 +1,15 @@
-<div class="row">
-	<ul class="media-list workouts">
-		<% @workouts.each do |w| %>
-			<%= render "workoutinfo", w: w %>
-		<% end %>
-	</ul>
-</div>
-<%= link_to "Plan your Workout!", new_workouts_template_sessionlist_path %>
+<div class="container workoutbackdrop col-md-10 col-md-offset-1">
+	<div class="row">
+		<div class="panel panel-heading">
+			On this page you can view all your past workout data. At the moment it is pretty primitive but soon it will hook up to the Google Fit api and have access to all your stored fitness data - wherever and through whatever device it was collected through!
+		</div>
+	</div>
+	<div class="row">
+		<ul class="media-list workouts">
+			<% @workouts.each do |w| %>
+				<%= render "workoutinfo", w: w %>
+			<% end %>
+		</ul>
+	</div>
+	
+</div>	

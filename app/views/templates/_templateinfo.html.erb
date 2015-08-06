@@ -1,29 +1,11 @@
 
 
 
-  <div class="panel panel-default">
-    <div class="panel-heading container" role="tab" id='<%= "heading" + t.id.to_s%>'>
-      <h4 class="panel-title ">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#<%= "collapse"+ t.id.to_s%>" aria-expanded="false" aria-controls="<%= "collapse"+ t.id.to_s%>">
-         <strong class="col-md-2 col-md-offset-5"><%=t.name %></strong> 
-        </a>
-      </h4>
-    </div>
-    <div id="<%= "collapse"+ t.id.to_s%>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="<%= "heading"+ t.id.to_s%>">
-      <div class="panel-body">
-        <div> <%= t.instructions%> </div> <br/>
-        <div>Muscle Categories: <%= t.musclecat%> </div> <br/>
-        
-		<div>
-			<form class="well well-sm selector" action="/">
-			 <select name="et">
-			   <% worktemps.each do |w| %>
-            <option value="<%= w.id %>" ex_id="<%=t.id%>" ><%=w.name %></option>
-				  <% end %>
-        </select>
-        <button class="btn btn-xs" action="javascript.void(0)">Add to Workout</button>
-			</form>
-		</div>
-      </div>
-    </div>
+<div class="modal_trigger col-md-4" style="background-image: url(<%= t.imgurl%>)" data-id="<%= t.id %>" >
+ <div id="ribbon-container">
+  <%= link_to t.name , template_path(t.id), :id => "ribbon" %> 
+  </div>
+  <div></div>
+
+</div>
 

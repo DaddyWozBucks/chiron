@@ -8,10 +8,11 @@
 	font-family: helvetica;
 }
 
-.pseudo-bg{
+body{
 	background-image: url("greybells.jpg");
 	background-size: 1440px 800px;
  	background-repeat:no-repeat;
  	display: compact;
  	width: 100%;
+ 	color: rgba(0,0,0,.4)
 }

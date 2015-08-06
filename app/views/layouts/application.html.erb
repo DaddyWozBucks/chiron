@@ -8,7 +8,7 @@
   <%= javascript_include_tag 'application'  %>
     <%= javascript_include_tag "//www.google.com/jsapi" %>
   <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= csrf_meta_tags %>
 </head>
@@ -39,7 +39,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Workouts <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><%= link_to "Session Plans", workouts_templates_path %></li>
-            <li><%= link_to "Your Workouts", user_index_path %></li>
+            <li><%= link_to "Your Workouts", workouts_path %></li>
             <li><%= link_to "Exercise Library", templates_path %></li>
             <li><%= link_to "Custom Workout", new_workouts_template_path %></li>
             
