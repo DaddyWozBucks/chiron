@@ -1,17 +1,21 @@
-<div class="row">
-	<ul class="media-list workouts">
-		<% @templates.each do |w| %>
-			<%= render "worktempinfo", w: w %>
-		<% end %>
-	</ul>
-	<form method="POST" action="/workouts" >
-		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-		
-		<input type="hidden" name="workouts_template_id" value="<%= @worktemp.id %>">
-		<input type="submit" name="Submit" value="Start"> 
-	</form>
-	
-
-
-
+<div class="container col-lg-10 col-lg-offset-1  centerstrip">
+	<div class="row"> 
+		<div class="introbox col-md-8 col-md-offset-2">
+			<h3>Here you can look over your workout before beginning!</h3> 
+			<form method="POST" action="/workouts" >
+				<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">	
+				<input type="hidden" name="workouts_template_id" value="<%= @worktemp.id %>">
+				<input type="submit" class="btn btn-lrg btn-danger" name="Submit" value="Start"> 
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="panel-group" id="accordion">
+				<% @templates.each do |w| %>
+					<%= render "worktempinfo", w: w %>
+				<% end %>
+			</ul>
+		</div>
+	</div>
 </div>

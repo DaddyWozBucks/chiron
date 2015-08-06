@@ -1,3 +1,4 @@
+<div class ="jumbotron">
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -13,7 +14,7 @@
     <%= f.text_field :name, autofocus: true %>
   </div>
 
-   <div class="field">
+  <div class="field">
     <%= f.label :handle %><br />
     <%= f.text_field :handle, autofocus: true %>
   </div>
@@ -26,6 +27,11 @@
   <div class="field">
     <%= f.label :location %><br />
     <%= f.text_field :location, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender, autofocus: true %>
   </div>
 
   <div class="field">
@@ -47,3 +53,5 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>

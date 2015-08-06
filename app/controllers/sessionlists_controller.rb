@@ -23,12 +23,28 @@ class SessionlistsController < ApplicationController
 			end
 			redirect_to workouts_template_path(@worktemp)
 		else request.format == :JSON
-			@worktemp = WorkoutsTemplate.find(params[:value])
-			@worktemp.sessionlists.create!(exercise_id: params[:ex_id])
-			render json: { status: :created }
+			@worktemp = WorkoutsTemplate.find(params[:workouts_template_id])
+			@worktemp.sessionlists.create!(exercise_id: params[:exercise_ids])
+			redirect_to workouts_templates_path
 		end
 	
 	end
+
+	def index
+
+		@worktemp = WorkoutsTemplate.find(params[:workouts_template_id])
+			 @templates = []
+			 @worktemp.sessionlists.each do |s|
+			 	t = Template.find(s.exercise_id)
+			 	@templates.push([t.name, t.id])	
+			 end
+		respond_to do |format|
+			format.json {
+				render json: {:templates => @templates}
+			}
+		end
+	end
+			
 
 
 end

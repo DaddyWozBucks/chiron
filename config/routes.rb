@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   get "/workouts_templates/userindex" => "workouts_templates#userindex", as: "user_index"
 
+  delete "/workouts/:id" => "workouts#destroy" , as: "delete_workout"
 
   resources :workouts_templates, only: [:index, :show, :create, :new, :edit, :update, :destroy] do
     resources :sessionlists, only: [:index, :show, :create, :new, :edit, :update, :destroy]

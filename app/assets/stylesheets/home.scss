@@ -9,10 +9,39 @@
 }
 
 body{
-	background-image: url("greybells.jpg");
+	background-image: url("paper.jpg");
 	background-size: 1440px 800px;
- 	background-repeat:no-repeat;
  	display: compact;
  	width: 100%;
  	color: rgba(0,0,0,.4)
+}
+
+#landing_page{
+    opacity: 0;
+    font-size: 21px;
+    margin-top: 25px;
+    text-align: center;
+
+    -webkit-transition: opacity 2s ease-in;
+       -moz-transition: opacity 2s ease-in;
+        -ms-transition: opacity 2s ease-in;
+         -o-transition: opacity 2s ease-in;
+            transition: opacity 2s ease-in;
+}
+
+#landing_page.load {
+    opacity: 1;
+}
+
+.image_landing{
+	height: 300px;
+	width: auto;
+	border-radius: 10px;
+	border: 2px solid rgba(0,0,0,.4)
+}
+
+.login_text {
+	background-color: #white;
+	border-radius: 10px;
+
 }

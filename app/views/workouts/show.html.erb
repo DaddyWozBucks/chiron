@@ -1,12 +1,13 @@
-<div class="col-xs-12 col-md-8 col-md-off-set-2 workout_page">
+<div class="jumbotron" id="workout__results">
 	<ul>
-		<div class="panel panel-header"><%= @worktemp.name %></div>
+		<div class="jumbotron-header"><h1> Well done! You smashed <%= @worktemp.name %>!</h1></div>
 		<% @exercises.each do |ex| %>
-			<% if ex.weight == nil %>
+			<% if ex.sets == nil %>
 				<li><%= ex.name %> Distance:<%=ex.distance%> Time: <%=ex.time%> Calories: <%=ex.calories%> </li>
 				<% else %>
 				<li><%= ex.name %> Weight:<%=ex.weight%> Reps: <%=ex.reps%> Sets: <%=ex.sets%> </li>
 			<% end %>
 		<% end %>
 	</ul>
+	<%= link_to "Back to Your Past Workouts", workouts_path %>
 </div>

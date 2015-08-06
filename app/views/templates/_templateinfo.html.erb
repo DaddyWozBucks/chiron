@@ -1,11 +1,21 @@
+<% if current_user.gender == "male" %>
 
 
+	<div class="modal_trigger col-md-4" style="background-image: url(<%= t.imgurl%>)" data-id="<%= t.id %>" >
+	 <div id="ribbon-container">
+	  <%= link_to t.name , template_path(t.id), :id => "ribbon" %> 
+	  </div>
+	  
 
-<div class="modal_trigger col-md-4" style="background-image: url(<%= t.imgurl%>)" data-id="<%= t.id %>" >
- <div id="ribbon-container">
-  <%= link_to t.name , template_path(t.id), :id => "ribbon" %> 
-  </div>
-  <div></div>
+	</div>
 
-</div>
+<% else %>
+
+	<div class="modal_trigger col-md-4" style="background-image: url(<%= t.fem_imgurl%>)" data-id="<%= t.id %>" >
+	 <div id="ribbon-container">
+	  <%= link_to t.name , template_path(t.id), :id => "ribbon" %> 
+	 </div>
+	</div>
+
+<% end %>
 

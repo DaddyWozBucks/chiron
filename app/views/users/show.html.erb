@@ -1,4 +1,4 @@
-<div class="background-container container">
+<div class="background-container container-fluid">
 	
 
 	<div class="tab-holder container">
@@ -6,34 +6,34 @@
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Profile Info</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Charts</a></li>
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+    <li role="presentation"><a href="#workoutbreakdown" aria-controls="workoutbreakdown" role="tab" data-toggle="tab">Workouts by Workout</a></li>
+    <li role="presentation"><a href="#workoutsbyweek" aria-controls="workoutsbyweek" role="tab" data-toggle="tab">Workouts by date</a></li>
+    
   </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="home">
-    	<div class="panel col-lg-3">Name: <%= current_user.name %>
-        <br/>
-        Handle: <%= current_user.handle%>
-        <br/>
-        Location: <%= current_user.location%></div>		
-				<div class="workouts-month col-lg-9">
-			<% @workouts.each do |x| %>
+    	<div class="user_info col-lg-3">
+        <h3>Name: <%= current_user.name %></h3>
+        <h4>Handle: <%= current_user.handle%></h4>
+        <h6>Location: <%= current_user.location%></h6>		
+      </div>
+			<div class="workouts-month col-lg-9">
+			 <% @workouts.each do |x| %>
 				<div class="workouts-month__item"><%= x.title %> <span class="pull-right"><%= time_ago_in_words(x.updated_at) %></span></div>
 			<% end %>
 		</div>
 
     </div>
-    <div role="tabpanel" class="tab-pane" id="profile">
-    		<div><%= pie_chart current_user.workouts.group(:title).count %></div>
+    <div role="tabpanel" class="tab-pane" id="workoutbreakdown">
+    		<div><%= pie_chart current_user.workouts.group(:title).count, class: "col-md-8" %></div>
     		
     </div>
-    <div role="tabpanel" class="tab-pane" id="messages">
-    <%= line_chart current_user.workouts.group_by_week(:updated_at).count %>
+    <div role="tabpanel" class="tab-pane" id="workoutsbyweek">
+    <%= line_chart current_user.workouts.group_by_day(:created_at).count, class: "col-md-8" %>
     </div>
-    <div role="tabpanel" class="tab-pane" id="settings">...</div>
+
   </div>
 
 </div>

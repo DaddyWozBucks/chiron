@@ -1,21 +1,25 @@
+<div class="container newworkouttempbox col-md-8 col-md-offset-2">
+
 <h2>Build your Workout!</h2>
 
 Please select the exercises you wish to 
+	<div class=" innerbox row ">
+		<form method="POST" action="<%= workouts_template_sessionlists_path(@worktemp) %>" id="sessionlist">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+				<div class = "row">
+  				<div class="dropdown-holder col-xs-6 col-md-4">
+  					<div class="panel panel-success col-md-12" id="drop1">
+  						 <select name="exercise_ids[]">
+  				 				<% @exlist.each do |ex| %>
+  				 				<option value="<%=ex.id%>"><%=ex.name%></option>
+  				 				<% end %>
+  				 		</select>
+  					</div>
+  				</div>	
+		 	  </div>
+		 	<a href="javascript:void(0)" class="btn btn-default" id="addextemp">Add another exercise!</a>
 
-<form method="POST" action="<%= workouts_template_sessionlists_path(@worktemp) %>" id="sessionlist">
-	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-	<div class="dropdown-holder col-xs-6 col-md-4">
-		<div class="panel panel-default dropdown" id="drop1">
-			 <select name="exercise_ids[]">
-	 				<% @exlist.each do |ex| %>
-	 				<option value="<%=ex.id%>"><%=ex.name%></option>
-	 				<% end %>
-	 		</select>
-		</div>
-	</div>	
- 	
- 	<a href="javascript:void(0)" class="btn btn-default" id="addextemp">Add another exercise!</a>
-
-	<button type="submit" class="btn btn-lrg" id="submitter"> Save Workout!</button>
-</form>
-
+			<button type="submit" class="btn btn-lrg" id="submitter"> Save Workout!</button>
+		</form>
+	</div>		
+</div>

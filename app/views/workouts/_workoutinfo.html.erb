@@ -1,7 +1,11 @@
 
 <li class="media col-sm-12 col-md-8 " data-id ="<%=w.id%>">
   <a class="pull-left" href="#">
-    <img class="media-object" src="<%= w.imgurl %>" alt="...">
+    <% if current_user.gender == "male" %>
+      <img class="media-object" src="<%= w.imgurl %>" alt="...">
+    <% else %>
+      <img class="media-object" src="<%= w.imgurl %>" alt="...">
+    <% end %>
   </a>
   <div class="media-body workout__item">
     <h4 class="media-heading"> <%= link_to w.title, workout_path(w.id)%> </h4> 
@@ -10,7 +14,7 @@
 	      	<li>Weight:<%=ex.weight%> Reps: <%=ex.reps%> Sets: <%=ex.sets%></li>
       <% end %>
       </ul>
-      <%=button_to "Delete Record", workouts_path(w.id), method: "DELETE", class: "btn btn-lrg" %>
+      <%=link_to "Delete Record", delete_workout_path(w.id), method: "DELETE", data: { confirm: "Are you sure?" }, class: "btn btn-lrg btn-danger" %>
   </div>
 
 </li>

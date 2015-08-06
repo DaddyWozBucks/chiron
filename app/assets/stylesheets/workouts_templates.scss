@@ -110,6 +110,7 @@
 .centerstrip {
 	background-color: #f5f5f5;
 	border-radius: 10px;
+	height: 100%;
 }
 .introbox {
 	background-color: #f5f5f5;
@@ -130,4 +131,8 @@
 	box-shadow: 2px rgba(0,159,241,.4);
 	width: 100%; 
 	padding: 1em;
+}
+.btn-holder{
+	height: 100px;
+	width:	150px;
 }

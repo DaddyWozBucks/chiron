@@ -8,10 +8,9 @@
 }
 
 .workouts-month__item {
-	border-bottom: 1px solid grey;
+	box-shadow: 2px solid rgba(0,59,149,.4);
 	padding-top: .5em;
-	border-right: 1px solid grey;
-	border-left: 1px solid grey;
+
 }
 
 .user-info {
@@ -31,6 +30,4 @@
 	background-color: #F2F2F2;
 	border-radius: 10px;
 }
-body{
-	background-color: #414242;
-}
+

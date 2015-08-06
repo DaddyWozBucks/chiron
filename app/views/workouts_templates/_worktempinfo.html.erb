@@ -1,12 +1,15 @@
 
-<li class="media col-sm-12 col-md-8 col-md-offset-2 workout__item" data-id ="<%=w.id%>">
-  <a class="pull-left" href="#">
-    <img class="media-object" src="<%= w.imgurl%>" alt="...">
-  </a>
-  <div class="media-body">
-    <h4 class="media-heading"> <%= w.name %> </h4> 
-     
-      	<div> <%= w.name %> <%= w.instructions %> , <%= w.musclecat %></div>
-
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%=w.id%>">
+          <%= w.name %>
+        </a>
+      </h4>
+    </div>
+    <div id="collapse<%=w.id%>" class="panel-collapse collapse in">
+      <div class="panel-body">
+     	<%= w.instructions %> , Muscle Categrories: <%= w.musclecat %>
+      </div>
+    </div>
   </div>
-</li>
