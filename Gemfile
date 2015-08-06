@@ -19,6 +19,7 @@ gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'activerecord-reputation-system'
 gem 'chartkick'
 gem 'groupdate'
+gem 'rails_12factor'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
