@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 WorkoutsTemplate.destroy_all
 Template.destroy_all
-Workout.destroy_all
+
 
 
 
@@ -29,7 +29,7 @@ Repeat this motion for the prescribed amount of repetitions.",
   calories:false,
   time:false,
   imgurl: "assets/lat_pulldowns_male.jpg",
-  fem_imgurl: "assets/lat_pulldowns_male.jpg",
+  fem_imgurl: "assets/lat_pulldowns_female.jpg",
   img_target_url: "assets/lat_pulldowns_target.gif"
   )
 
@@ -48,7 +48,7 @@ When you are done, place the bar back in the rack.",
   calories:false,
   time:false,
   imgurl: "assets/barbell_bench_press_male.jpg",
-  fem_imgurl: "assets/barbell_bench_press_male.jpg",
+  fem_imgurl: "assets/barbell_bench_press_female.jpg",
   img_target_url: "assets/barbell_bench_press_target.gif"
   )
 Template.create!( 
@@ -70,7 +70,7 @@ If you have a healthy back, ensure perfect form and never round the back as this
   calories:false,
   time:false,
   imgurl: "assets/barbell_deadlift_male.jpg",
-  fem_imgurl: "assets/barbell_deadlift_male.jpg",
+  fem_imgurl: "assets/barbell_deadlift_female.jpg",
   img_target_url: "assets/barbell_deadlift_target.gif"
   )
 Template.create!( 
@@ -88,7 +88,7 @@ Hold for a second at the contracted position and repeat the movement for the pre
   calories:false,
   time:false,
   imgurl: "assets/dumbbell_flyes_male.jpg",
-  fem_imgurl: "assets/dumbbell_flyes_male.jpg",
+  fem_imgurl: "assets/dumbbell_flyes_female.jpg",
   img_target_url: "assets/dumbbell_flyes_target.gif"
   )
 Template.create!( 
@@ -109,7 +109,7 @@ Variations: Can also be done on an incline or decline bench, or with dumbbells o
   calories:false,
   time:false,
   imgurl: "assets/flat_bench_cable_flyes_male.jpg",
-  fem_imgurl: "assets/flat_bench_cable_flyes_male.jpg",
+  fem_imgurl: "assets/flat_bench_cable_flyes_female.jpg",
   img_target_url: "assets/flat_bench_cable_flyes_target.gif"
   )
 Template.create!( 
@@ -128,7 +128,7 @@ Repeat for the recommended amount of repetitions.",
   calories:false,
   time:false,
   imgurl: "assets/barbell_squat_male.jpg",
-  fem_imgurl: "assets/barbell_squat_male.jpg",
+  fem_imgurl: "assets/barbell_squat_female.jpg",
   img_target_url: "assets/barbell_squat_target.gif"
   )
 Template.create!( 
@@ -146,7 +146,7 @@ Repeat for the recommended amount of repetitions.",
   calories:false,
   time:false,
   imgurl: "assets/hammer_curls_male.jpg",
-  fem_imgurl: "assets/hammer_curls_male.jpg",
+  fem_imgurl: "assets/hammer_curls_female.jpg",
   img_target_url: "assets/hammer_curls_target.gif"
   )
 Template.create!( 
@@ -164,7 +164,7 @@ Repeat for the recommended amount of repetitions.",
   calories:false,
   time:false,
   imgurl: "assets/tricep_pushdown_cable_male.jpg",
-  fem_imgurl: "assets/tricep_pushdown_cable_male.jpg",
+  fem_imgurl: "assets/tricep_pushdown_cable_female.jpg",
   img_target_url: "assets/tricep_pushdown_cable_target.gif"
   )
 Template.create!( 
@@ -179,7 +179,7 @@ Treadmills offer convenience, cardiovascular benefits, and usually have less imp
   calories: true,
   time: true,
   imgurl: "assets/treadmill_male.jpg",
-  fem_imgurl: "assets/treadmill_male.jpg",
+  fem_imgurl: "assets/treadmill_female.jpg",
   img_target_url: "assets/treadmill_target.gif"
   )
 Template.create!( 
@@ -195,7 +195,7 @@ The recovery phase simply involves straightening your arms, bending the knees, a
   calories: true,
   time: true,
   imgurl: "assets/rowing_ergo_male.jpg",
-  fem_imgurl: "assets/rowing_ergo_male.jpg",
+  fem_imgurl: "assets/rowing_ergo_female.jpg",
   img_target_url: "assets/rowing_ergo_target.gif"
   )
 Template.create!( 
@@ -230,7 +230,7 @@ Repeat for the recommended amount of repetitions.",
   calories: false,
   time: false,
   imgurl: "assets/barbell_delt_row_male.jpg",
-  fem_imgurl: "assets/barbell_delt_row_male.jpg",
+  fem_imgurl: "assets/barbell_delt_row_female.jpg",
   img_target_url: "assets/barbell_delt_row_target.gif"
  )
 Template.create!( 
@@ -248,7 +248,7 @@ When you are done, place the bar back in the rack.",
   calories: false,
   time: false,
   imgurl: "assets/barbell_incline_bench_press_male.jpg",
-  fem_imgurl: "assets/barbell_incline_bench_press_male.jpg",
+  fem_imgurl: "assets/barbell_incline_bench_press_female.jpg",
   img_target_url: "assets/barbell_incline_bench_press_target.gif"
   )
 Template.create!( 
@@ -267,7 +267,7 @@ Continue alternating in this manner until all of the recommended repetitions for
   calories: false,
   time: false,
   imgurl: "assets/air_bike_male.jpg",
-  fem_imgurl: "assets/air_bike_male.jpg",
+  fem_imgurl: "assets/air_bike_female.jpg",
   img_target_url: "assets/air_bike_target.gif"
   )
 Template.create!( 
@@ -283,7 +283,7 @@ The recovery phase simply involves straightening your arms, bending the knees, a
   calories: false,
   time: false,
   imgurl: "assets/bent_knee_hip_raise_male.jpg",
-  fem_imgurl: "assets/bent_knee_hip_raise_male.jpg",
+  fem_imgurl: "assets/bent_knee_hip_raise_female.jpg",
   img_target_url: "assets/bent_knee_hip_raise_target.gif"
   )
 
